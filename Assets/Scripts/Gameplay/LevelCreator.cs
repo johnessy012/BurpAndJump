@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelCreator : MonoBehaviour {
 
+    public bool CreateLevel = true;
+
     private PoolManager _pooler;
 
     [SerializeField]
@@ -28,11 +30,14 @@ public class LevelCreator : MonoBehaviour {
 
     public GameObject nextBlock;
 
+    private void Awake()
+    {
+        _pooler = FindObjectOfType<PoolManager>();
+    }
 
     private void Start()
     {
         parent = GameObject.Find("LevelParent").transform;
-        StartCoroutine(CR_CreateBlocks());
     }
 
     private void ReturnBlocksWithinChanceRange()
@@ -67,23 +72,33 @@ public class LevelCreator : MonoBehaviour {
         nextBlock = ReturnBlock();
         if (_pooler.HasBlockAvailableForUse(nextBlock))
         {
-            nextBlock = _pooler.ReturnRandomPooledItem();
+            nextBlock = _pooler.chosenBlock;
+            nextBlock.transform.position = transform.position += new Vector3(0, 0, 1);
+            nextBlock.transform.SetParent(parent);
+            CreateLevel = false;
+            Debug.LogWarning("We are using a recycled block");
+            return;
         }
+        Debug.Log("We are creating a new block");
         GameObject newBlock = Instantiate(ReturnBlock(), transform.position += new Vector3(0, 0, 1), Quaternion.identity);
+        Debug.LogError("Instantiating.....");
         newBlock.transform.SetParent(parent);
     }
 
-    private IEnumerator CR_CreateBlocks()
+    private void Update()
     {
-        while (true)
+        if (CreateLevel)
         {
-            if (currentBlocks <= maxBlocks)
+            if (currentBlocks < maxBlocks)
             {
-                Debug.Log("Create a new bblock : " + currentBlocks + " :: " + maxBlocks);
-                // BUG : This is getting called all the time. 
+               // Debug.Log("We are creating a new block" + currentBlocks);
+                //BUG This is not stopping at the max of 25 
                 CreateBlock();
             }
-            yield return new WaitForEndOfFrame();
+            else
+            {
+               // Debug.Log("We have reached our limit");
+            }
         }
     }
 

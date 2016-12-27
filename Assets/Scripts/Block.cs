@@ -28,8 +28,9 @@ public class Block : MonoBehaviour {
 
     private IEnumerator CR_WaitToPool()
     {
-        _levelCreator.PooledBlocks();
+
         yield return new WaitForSeconds(3);
+        _levelCreator.PooledBlocks();
         Destroy(_rigidBody);
         _pooler.PoolItem(gameObject);
     }
