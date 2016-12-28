@@ -23,6 +23,8 @@ public class LevelCreator : MonoBehaviour {
         public float ChanceOfSpawning;
     }
 
+    private int currentZ;
+    private Vector3 newPos;
     public Blocks[] blockTypes;
 
     [SerializeField]
@@ -69,18 +71,22 @@ public class LevelCreator : MonoBehaviour {
 
     private void CreateBlock()
     {
+         
         nextBlock = ReturnBlock();
+        newPos = new Vector3(newPos.x, newPos.y, currentZ);
+        currentZ++;
         if (_pooler.HasBlockAvailableForUse(nextBlock))
         {
             nextBlock = _pooler.chosenBlock;
-            nextBlock.transform.position = transform.position += new Vector3(0, 0, 1);
+            nextBlock.transform.position = newPos;
             nextBlock.transform.SetParent(parent);
-            CreateLevel = false;
+            nextBlock.SetActive(true);
             Debug.LogWarning("We are using a recycled block");
             return;
         }
+
         Debug.Log("We are creating a new block");
-        GameObject newBlock = Instantiate(ReturnBlock(), transform.position += new Vector3(0, 0, 1), Quaternion.identity);
+        GameObject newBlock = Instantiate(ReturnBlock(), newPos, Quaternion.identity);
         Debug.LogError("Instantiating.....");
         newBlock.transform.SetParent(parent);
     }

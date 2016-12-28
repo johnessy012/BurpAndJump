@@ -28,10 +28,10 @@ public class Block : MonoBehaviour {
 
     private IEnumerator CR_WaitToPool()
     {
-
-        yield return new WaitForSeconds(3);
         _levelCreator.PooledBlocks();
-        Destroy(_rigidBody);
         _pooler.PoolItem(gameObject);
+        Destroy(_rigidBody);
+        gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.000f);
     }
 }
