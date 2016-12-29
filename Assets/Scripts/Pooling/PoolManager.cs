@@ -24,7 +24,6 @@ public class PoolManager : MonoBehaviour {
 
     public void PoolItem(GameObject go)
     {
-
         go.transform.position = new Vector3(1000, 1000, 1000);
         go.transform.parent = parent;
 
@@ -52,10 +51,8 @@ public class PoolManager : MonoBehaviour {
         {
             if (pooledBlocks[i].name.Contains(go.name))
             {
-                Debug.Log("We have found a block that we can use.");
                 if (pooledBlocks[i].objects.Count > 0)
                 {
-                    Debug.Log("We are going to recycle a block");
                     chosenBlock = pooledBlocks[i].objects[0];
                     pooledBlocks[i].objects.Remove(chosenBlock);
                     return chosenBlock;

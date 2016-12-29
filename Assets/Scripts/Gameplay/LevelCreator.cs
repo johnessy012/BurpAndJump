@@ -23,14 +23,30 @@ public class LevelCreator : MonoBehaviour {
         public float ChanceOfSpawning;
     }
 
+    [System.Serializable]
+    public class Items
+    {
+        public string ItemName;
+        public GameObject ItemToCreate;
+        public float ChanceOfSpawning;
+    }
+
+
     private int currentZ;
     private Vector3 newPos;
-    public Blocks[] blockTypes;
+    public List<Blocks> blockTypes;
+
+
+    public List<GameObject> currentActiveBlocks;
+    public List<Items> ObstaclesToCreate;
 
     [SerializeField]
-    private List<GameObject> _possibleBlocksToCreate;
+    private List<GameObject> _possibleBlocksToCreate = new List<GameObject>();
+    [SerializeField]
+    private List<GameObject> _possibleItemsToCreate;
 
     public GameObject nextBlock;
+    public GameObject nextItem;
 
     private void Awake()
     {
@@ -42,6 +58,7 @@ public class LevelCreator : MonoBehaviour {
         parent = GameObject.Find("LevelParent").transform;
     }
 
+    // This could be made Generic
     private void ReturnBlocksWithinChanceRange()
     {
         if (_possibleBlocksToCreate.Count > 0)
@@ -49,63 +66,49 @@ public class LevelCreator : MonoBehaviour {
             _possibleBlocksToCreate.Clear();
         }
 
-        for (int i = 0; i < blockTypes.Length; i++)
+        for (int i = 0; i < blockTypes.Count; i++)
         {
-            if (blockTypes[i].ChanceOfSpawning < DifficultyLevel)
+            if (blockTypes[i].ChanceOfSpawning <= DifficultyLevel)
             {
                 _possibleBlocksToCreate.Add(blockTypes[i].Block);
             }
         }
     }
-
+    // Return a block from our list and add it to our possible blocks to create 
     private GameObject ReturnBlock()
     {
         ReturnBlocksWithinChanceRange();
-        return _possibleBlocksToCreate[Random.Range(0, _possibleBlocksToCreate.Count)];
+        if (_possibleBlocksToCreate.Count > 0)
+        {
+            return _possibleBlocksToCreate[Random.Range(0, _possibleBlocksToCreate.Count)];
+        }
+        else
+            return null;
     }
-
-    private void HasBlockAvailable()
-    {
-
-    }
-
+    // Create or use a block from the pooling system.
     private void CreateBlock()
     {
-         
+        // Get a rendom block from our list of blocks
         nextBlock = ReturnBlock();
+        // Grab the next pos
         newPos = new Vector3(newPos.x, newPos.y, currentZ);
         currentZ++;
+        // If we have a block in our pooler then ue that block instead;
         if (_pooler.HasBlockAvailableForUse(nextBlock))
         {
             nextBlock = _pooler.chosenBlock;
             nextBlock.transform.position = newPos;
             nextBlock.transform.SetParent(parent);
+            nextBlock.transform.eulerAngles = Vector3.zero;
             nextBlock.SetActive(true);
-            Debug.LogWarning("We are using a recycled block");
+            currentActiveBlocks.Add(nextBlock);
             return;
         }
-
-        Debug.Log("We are creating a new block");
-        GameObject newBlock = Instantiate(ReturnBlock(), newPos, Quaternion.identity);
-        Debug.LogError("Instantiating.....");
+        // Ok we did not have a block to use so we will create one;
+        GameObject newBlock = Instantiate(nextBlock, newPos, Quaternion.identity);
+        newBlock.transform.eulerAngles = parent.eulerAngles;
+        currentActiveBlocks.Add(newBlock);
         newBlock.transform.SetParent(parent);
-    }
-
-    private void Update()
-    {
-        if (CreateLevel)
-        {
-            if (currentBlocks < maxBlocks)
-            {
-               // Debug.Log("We are creating a new block" + currentBlocks);
-                //BUG This is not stopping at the max of 25 
-                CreateBlock();
-            }
-            else
-            {
-               // Debug.Log("We have reached our limit");
-            }
-        }
     }
 
     public void NewBlockSetup()
@@ -118,5 +121,27 @@ public class LevelCreator : MonoBehaviour {
         currentBlocks--;
     }
 
+    public void IncreaseDifficulty(float difficulty)
+    {
+        DifficultyLevel = difficulty;
+    }
 
+    private void Update()
+    {
+        if (CreateLevel)
+        {
+            if (currentBlocks < maxBlocks)
+            {
+                // Debug.Log("We are creating a new block" + currentBlocks);
+                //BUG This is not stopping at the max of 25 
+                CreateBlock();
+            }
+            else
+            {
+                // Debug.Log("We have reached our limit");
+            }
+        }
+    }
 }
+
+

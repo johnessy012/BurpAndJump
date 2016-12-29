@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000011609526706}
+  m_IsPrefabParent: 1
+--- !u!1 &1000011609526706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000011852137560}
+  - component: {fileID: 33000012718533402}
+  - component: {fileID: 23000010008040858}
+  - component: {fileID: 114000010652800346}
+  - component: {fileID: 114000013092113096}
+  - component: {fileID: 208000013711219390}
+  - component: {fileID: 65000013660674396}
+  m_Layer: 0
+  m_Name: Gingerbread Tree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011852137560
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011609526706}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 6.431, y: 0, z: -4.903}
+  m_LocalScale: {x: 18.781677, y: 18.781693, z: 18.781693}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!23 &23000010008040858
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011609526706}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: fc00b24f836852547a5e854a71fed394, type: 2}
+  - {fileID: 2100000, guid: 9d0234dd7ca5af849b2465d90924f968, type: 2}
+  - {fileID: 2100000, guid: 7b6d31e36dd0aed4d844a02c4f2a4525, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33000012718533402
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011609526706}
+  m_Mesh: {fileID: 4300000, guid: b7c865bcf1b8549498deb61e8878f9d4, type: 3}
+--- !u!65 &65000013660674396
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011609526706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09929298, y: 0.10015077, z: 0.14060827}
+  m_Center: {x: 0.0008824002, y: -0.000080637634, z: 0.06030413}
+--- !u!114 &114000010652800346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011609526706}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e13291ed3d162a4f8e157e447fb50d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleXtime: 1
+  scaleYtime: 1
+  scaleZtime: 1
+  scale: 1000
+  startingScale: {x: 0, y: 0, z: 0}
+  enableOnStart: 1
+  delayMax: 0
+--- !u!114 &114000013092113096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011609526706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45714155944248068046a5bf3fc558b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParentTabFromMenu: {fileID: 0}
+  ID: 26
+  Pos: {x: 0, y: 0, z: 0}
+  Rot: {x: 0, y: 0, z: 0}
+  Scale: {x: 0, y: 0, z: 0}
+  Name: 
+  sensitivity: 6
+  isMoving: 0
+  colours: []
+--- !u!208 &208000013711219390
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011609526706}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.05, y: 0.05, z: 0.07}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.001, y: 0, z: 0.060000002}
+  m_TimeToStationary: 0.5

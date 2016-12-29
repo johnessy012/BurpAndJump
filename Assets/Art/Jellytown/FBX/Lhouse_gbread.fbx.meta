@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 93979c989350ea04e81fb280ede5623d
+timeCreated: 1478635392
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Circle
+    100004: Cube
+    100006: Cube.001
+    100008: Cube.002
+    100010: Cube.003
+    100012: Cube.004
+    100014: Cube.005
+    100016: Cylinder
+    100018: Cylinder.001
+    100020: Cylinder.002
+    100022: Cylinder.003
+    100024: Empty
+    100026: Empty.001
+    100028: //RootNode
+    100030: MarziLighthouse
+    100032: MarziLighthouse.001
+    100034: MellowLighthouse
+    100036: Plane
+    100038: Torus.001
+    100040: twistyCyl
+    100042: twistyCyl.001
+    100044: twistyCyl.002
+    100046: twistyCyl.003
+    400000: Camera
+    400002: Circle
+    400004: Cube
+    400006: Cube.001
+    400008: Cube.002
+    400010: Cube.003
+    400012: Cube.004
+    400014: Cube.005
+    400016: Cylinder
+    400018: Cylinder.001
+    400020: Cylinder.002
+    400022: Cylinder.003
+    400024: Empty
+    400026: Empty.001
+    400028: //RootNode
+    400030: MarziLighthouse
+    400032: MarziLighthouse.001
+    400034: MellowLighthouse
+    400036: Plane
+    400038: Torus.001
+    400040: twistyCyl
+    400042: twistyCyl.001
+    400044: twistyCyl.002
+    400046: twistyCyl.003
+    2300000: Circle
+    2300002: Cube
+    2300004: Cube.001
+    2300006: Cube.002
+    2300008: Cube.003
+    2300010: Cube.004
+    2300012: Cube.005
+    2300014: Cylinder
+    2300016: Cylinder.001
+    2300018: Cylinder.002
+    2300020: Cylinder.003
+    2300022: MarziLighthouse
+    2300024: MarziLighthouse.001
+    2300026: MellowLighthouse
+    2300028: Plane
+    2300030: Torus.001
+    2300032: twistyCyl
+    2300034: twistyCyl.001
+    2300036: twistyCyl.002
+    2300038: twistyCyl.003
+    2300040: //RootNode
+    3300000: Circle
+    3300002: Cube
+    3300004: Cube.001
+    3300006: Cube.002
+    3300008: Cube.003
+    3300010: Cube.004
+    3300012: Cube.005
+    3300014: Cylinder
+    3300016: Cylinder.001
+    3300018: Cylinder.002
+    3300020: Cylinder.003
+    3300022: MarziLighthouse
+    3300024: MarziLighthouse.001
+    3300026: MellowLighthouse
+    3300028: Plane
+    3300030: Torus.001
+    3300032: twistyCyl
+    3300034: twistyCyl.001
+    3300036: twistyCyl.002
+    3300038: twistyCyl.003
+    3300040: //RootNode
+    4300000: MarziLighthouse.001
+    4300002: MarziLighthouse
+    4300004: MellowLighthouse
+    4300006: twistyCyl.003
+    4300008: twistyCyl.002
+    4300010: twistyCyl.001
+    4300012: Cube.005
+    4300014: Cube.004
+    4300016: twistyCyl
+    4300018: Cylinder.003
+    4300020: Cube.003
+    4300022: Cube.002
+    4300024: Torus.001
+    4300026: Cube.001
+    4300028: Cylinder.002
+    4300030: Cylinder.001
+    4300032: Cylinder
+    4300034: Plane
+    4300036: Circle
+    4300038: Cube
+    4300040: lighthouse_gbread
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
